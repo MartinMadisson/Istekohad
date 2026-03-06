@@ -1,12 +1,36 @@
-const container = document.querySelector('.container');
+const salvesta = document.querySelector("#salvesta")
+const nimi = document.querySelector("#nimi")
+const kohad = document.querySelector("#koht")
+let eesnimi = ""
+let istekoht = ""
 
-container.addEventListener('click', function (e) {
-    if (e.target.tagName === 'BUTTON') {
-        e.target.classList.toggle('selected');
-    }
+salvesta.addEventListener('click', function() {
+    eesnimi = nimi.value
+    istekoht = kohad.value
+    save(eesnimi, istekoht)
+
 });
 
-function sendBron() {
-return document.querySelector('button.selected').innerText                          // saada
+
+async function save (name, place) {
+const response = await fetch('https://tinkr.tech/sdb/istekohad', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ name: name, places: place })
+});
 }
-console.log(sendBron)
+
+async function load() {
+const response = await fetch('https://tinkr.tech/sdb/istekohad');
+const documents = await response.json();
+console.log(documents);
+
+for (const itms of documents){
+    const konteiner = document.querySelector("#container")
+    const iste = document.createElement("h3")
+    iste.textContent = "Nimi: " + itms.name + " Koht: " + itms.places
+    konteiner.appendChild(iste)
+}
+}
+
+load()
