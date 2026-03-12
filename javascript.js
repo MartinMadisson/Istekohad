@@ -11,7 +11,7 @@ salvesta.addEventListener('click', function() {
 });
 
 
- HEAD
+ 
 async function save(name, place) {
     const response = await fetch('https://tinkr.tech/sdb/istekohad', {
         method: 'POST',
