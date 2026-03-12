@@ -6,6 +6,7 @@ body {
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #000000;
+    font-size: 50px;
 }
 
 .container {
@@ -16,43 +17,6 @@ body {
     width: fit-content;
 }
 
-button {
-    color: rgb(0, 0, 0);
-    background-color: #e8e8e8;
-    padding: 10px 15px;
-    margin: 5px 0;
-    border-radius: 4px;
-    font-size: 15px;
-}
-
-button:hover {
-    background-color: #3df119;
-}
-
-button.selected {
-    background-color: #2b2b2b;
-    color: #fff;
-}
-
-#A10-btn {
-    width: 52px;
-}
-
-#B10-btn {
-    width: 52px;
-}
-
-#C10-btn {
-    width: 52px;
-}
-
-#D10-btn {
-    width: 52px;
-}
-
-#E10-btn {
-    width: 52px;
-}
 
 #nimi {
     padding: 15px;
@@ -71,4 +35,17 @@ button.selected {
     font-size: 15px;
     display: flex;
     margin: 20px auto;
+}
+
+#koht {
+    padding: 15px;
+    font-size: 15px;
+    border-radius: 10px;
+    border-color: #3df119;
+    display: flex;
+    margin: 20px auto;
+}
+
+#Broneeritud {
+    font-size: 50px;
 }
